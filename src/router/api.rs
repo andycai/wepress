@@ -1,7 +1,6 @@
 use axum::Router;
 
-use crate::admin::content::router;
-
+use crate::api::content::router;
 
 pub fn routes() -> Router {
     Router::new()

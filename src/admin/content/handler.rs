@@ -16,11 +16,11 @@ pub struct User {
 }
 
 pub async fn hello() -> impl IntoResponse {
-    "Hello, world!"
+    "Admin Hello, world!"
 }
 
 pub async fn post_hello() -> impl IntoResponse {
-    "Hello, world!"
+    "Admin Hello, world!"
 }
 
 pub async fn create_user(
