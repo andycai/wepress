@@ -2,12 +2,18 @@ use axum::{
     routing::{get, post},
     Router,
 };
+use axum_template::engine::Engine;
+use tera::Tera;
 
-use super::handler::{create_user, hello, post_hello};
+use crate::template;
 
-pub fn init_router() -> Router {
+use super::handler::{handle_home, post_hello};
+
+pub fn init_router(tera: Tera) -> Router {
     Router::new()
-        .route("/hello", get(hello))
-        .route("/user", get(create_user))
-        .route("/hello", post(post_hello))
+        .route("/home", get(handle_home))
+        .with_state(template::AppState {
+            engine: Engine::from(tera),
+        })
+        .route("/post", post(post_hello))
 }
