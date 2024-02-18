@@ -2,13 +2,13 @@
 <html lang="en">
 
 <head>
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ .favicon_url }}" />
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ favicon_url }}" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ .title }} {{ .sitename }}</title>
-    <meta name="description" content="{{ .description }}">
-    <meta name="keywords" content="{{ .keywords }}">
-    {{ .extra_css }}
+    <title>{{ title }} {{ sitename }}</title>
+    <meta name="description" content="{{ description }}">
+    <meta name="keywords" content="{{ keywords }}">
+    {{ extra_css }}
 </head>
 <style>
     :root {
@@ -23,15 +23,13 @@
 </style>
 
 <body>
-    {{ embed }}
-    {{ template "footer" . }}
 </body>
-{{ if .maincss_url }}
-<link href="{{ .maincss_url }}" rel="stylesheet" type="text/css">
-{{ else }}
+{% if maincss_url %}
+<link href="{{ maincss_url }}" rel="stylesheet" type="text/css">
+{% else %}
 <script src="/static/admin/tailwind-3.3.2.js"></script>
-{{ end }}
+{% endif %}
 
-{{ .extra_js }}
+{{ extra_js }}
 
 </html>
