@@ -7,13 +7,14 @@ use tera::Tera;
 
 use crate::template;
 
-use super::handler::{home, post_hello};
+use super::handler::{login, login_action, ping_db, setup};
 
 pub fn init_router(tera: Tera) -> Router {
     Router::new()
-        .route("/", get(home))
+        .route("/auth/login", get(login).post(login_action))
+        .route("/setup", get(setup))
         .with_state(template::AppState {
             engine: Engine::from(tera),
         })
-        .route("/post", post(post_hello))
+        .route("/setup/ping_db", post(ping_db))
 }

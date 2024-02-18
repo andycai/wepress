@@ -1,6 +1,6 @@
 use axum::Router;
 
-use wepress::router::{admin, api, statics};
+use wepress::router::{admin, api, site, statics};
 
 use tera::Tera;
 
@@ -10,10 +10,12 @@ async fn main() {
     tracing_subscriber::fmt::init();
 
     let tera = Tera::new("templates/**/*.html").unwrap();
+    let tera2 = Tera::new("templates/**/*.html").unwrap();
 
     // build our application with a route
     let app = Router::new()
-        .nest("/admin", admin::routes(tera))
+        .nest("/", site::routes(tera))
+        .nest("/admin", admin::routes(tera2))
         .nest("/api", api::routes())
         .nest("/static", statics::routes())
         ;

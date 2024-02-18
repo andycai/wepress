@@ -18,17 +18,13 @@ pub struct User {
     username: String,
 }
 
-pub async fn handle_home(engine: AppEngine) -> impl IntoResponse {
+pub async fn home(engine: AppEngine) -> impl IntoResponse {
     let user = User {
         id: 8888,
         username: "Andy".to_string(),
     };
 
-    RenderHtml("index.html", engine, user)
-}
-
-pub async fn handle_hello() -> impl IntoResponse {
-    "Admin Hello, world!"
+    RenderHtml("admin/index.html", engine, user)
 }
 
 pub async fn post_hello() -> impl IntoResponse {
