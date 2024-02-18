@@ -24,6 +24,9 @@
 
 <body>
     {% block body %}{% endblock %}
+    {% block footer %}
+    {% include "footer.html" %}
+    {% endblock %}
 </body>
 {% if maincss_url %}
 <link href="{{ maincss_url }}" rel="stylesheet" type="text/css">

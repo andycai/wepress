@@ -2,7 +2,7 @@
 <html class="h-full bg-gray-50">
 
 <head>
-    <title>Weapi Installer</title>
+    <title>Wepress Installer</title>
     <link rel="stylesheet" href="" />
     <script src="/static/admin/tailwind-3.3.2.js"></script>
     <script src="/static/admin/alpinejs-router-1.x.x.min.js" defer></script>
@@ -21,8 +21,8 @@
         dbDriver: 'mysql',
         dbHost: '127.0.0.1',
         dbPort: '3306',
-        dbName: 'weapi',
-        dbFilename: 'weapi.db',
+        dbName: 'wepress',
+        dbFilename: 'wepress.db',
         dbCharset: 'utf8mb4',
         dbUser: 'root',
         dbPassword: '',
@@ -30,11 +30,11 @@
         gitCommit: '{% if gitCommit %} {{ gitCommit }} {% else %} "dev" {% endif %}',
         osVersion: '{{ osVersion }}',
         cwd: '{{ cwd }}',
-        superUsername: 'weapi',
+        superUsername: 'wepress',
         superPassword: '',
         showProgress: false,
         steps: [],
-        envLogFile: 'weapi.log',
+        envLogFile: 'wepress.log',
         envSalt: randText(32),
         envCookieSecret: randText(32),
         enableSqlite: '{{ enableSqlite }}' == 'true',
@@ -268,7 +268,7 @@
                 <div class="flex  justify-between px-4 py-5 sm:px-6 items-center">
                     <div>
                         <h2 class="text-lg leading-6 font-medium text-gray-900">
-                            Weapi Setup
+                            wepress Setup
                         </h2>
                         <p class="mt-1 text-sm text-gray-500">
                             Configure the database and environment variables to complete the setup.
@@ -497,7 +497,7 @@
                 </div>
             </div>
             <div class="flex items-center px-4 py-4 text-sm text-gray-400 space-x-3">
-                <span>The <strong>Weapi</strong> is headless cms for developers.</span>
+                <span>The <strong>wepress</strong> is headless cms for developers.</span>
             </div>
         </form>
     </div>
