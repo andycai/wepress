@@ -1,19 +1,13 @@
+use super::handler::{home, post_hello};
+use crate::global::template::APP_STATE;
 use axum::{
     routing::{get, post},
     Router,
 };
-use axum_template::engine::Engine;
-use tera::Tera;
 
-use crate::template;
-
-use super::handler::{home, post_hello};
-
-pub fn init_router(tera: Tera) -> Router {
+pub fn init_router() -> Router {
     Router::new()
         .route("/", get(home))
-        .with_state(template::AppState {
-            engine: Engine::from(tera),
-        })
+        .with_state(APP_STATE.clone())
         .route("/post", post(post_hello))
 }

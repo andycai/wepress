@@ -1,9 +1,6 @@
-use axum::Router;
-use tera::Tera;
-
 use crate::api::site::router;
+use axum::Router;
 
-pub fn routes(tera: Tera) -> Router {
-    Router::new()
-        .merge(router::init_router(tera))
+pub fn routes() -> Router {
+    Router::new().merge(router::init_router())
 }

@@ -4,5 +4,6 @@
 
 pub mod admin;
 pub mod api;
+pub mod global;
 pub mod router;
 pub mod template;
