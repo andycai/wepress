@@ -1,23 +1,23 @@
 # Wepress
 
-Wepress is the lightweight open-source headless CMS wrote in Rust.
+Wepress is the lightweight open-source headless CMS written in Rust.
 
 Rust + Axum + Alpine.js
 
-Modules include: 
+Modules include:
 
 - Site
 - Content
-    - Category
-    - Post
-    - Page
-    - Media
+  - Category
+  - Post
+  - Page
+  - Media
 - Setting
-    - Group
-    - GroupMember
-    - User
-    - Config
+  - Group
+  - GroupMember
+  - User
+  - Config
 - Activity
-    - Activity
-    - Club
-    - ClubMember
+  - Activity
+  - Club
+  - ClubMember
