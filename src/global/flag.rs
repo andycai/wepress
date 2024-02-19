@@ -6,24 +6,24 @@ use lazy_static::lazy_static;
 #[command(version, about, long_about = None)]
 pub struct Args {
     /// Address of `TcpListener` bind
-    #[arg(short, long, default_value = "0.0.0.0:3000")]
-    addr: String,
+    #[arg(short, long, default_value = "")]
+    pub addr: String,
 
     /// Datebase driver
-    #[arg(short, long, default_value = "sqlite")]
-    db_driver: String,
+    #[arg(long, default_value = "sqlite")]
+    pub db_driver: String,
 
     /// Database DNS
     #[arg(short, long, default_value = "wepress.db")]
-    dsn: String,
+    pub dsn: String,
 
     /// Debug mode
-    #[arg(short, long)]
-    debug: bool,
+    #[arg(long, default_value = "false")]
+    pub debug: bool,
 
     /// Log file
     #[arg(short, long, default_value = "wepress.log")]
-    log: String,
+    pub log: String,
 }
 
 lazy_static! {
